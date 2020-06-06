@@ -16,16 +16,27 @@
 
     <TextView
         android:id="@+id/location"
-        android:layout_weight="2"
+        android:layout_weight="4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="San Francisco, CA" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        tools:text="Mar 6, 2010" />
+    <LinearLayout
+        android:gravity="right"
+        android:layout_weight="1.1"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Jun 7, 2020" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="01:43 AM" />
+    </LinearLayout>
 
 </LinearLayout>
