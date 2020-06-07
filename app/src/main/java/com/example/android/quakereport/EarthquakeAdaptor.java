@@ -58,10 +58,10 @@ public class EarthquakeAdaptor extends ArrayAdapter<Earthquake> {
             location = tokenizer[1].trim();
         }
 
-        TextView distanceTextView = (TextView) convertView.findViewById(R.id.distance);
+        TextView distanceTextView = (TextView) convertView.findViewById(R.id.location_offset);
         distanceTextView.setText(distanceFrom);
 
-        TextView locationTextView = (TextView) convertView.findViewById(R.id.location);
+        TextView locationTextView = (TextView) convertView.findViewById(R.id.primary_location);
         locationTextView.setText(location);
 
         // Create a new Date object from the time in milliseconds of the earthquake
