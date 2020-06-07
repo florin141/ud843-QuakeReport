@@ -9,29 +9,45 @@
 
     <TextView
         android:id="@+id/magnitude"
-        android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         tools:text="8.9" />
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_weight="4"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="San Francisco, CA" />
+        android:layout_weight="4"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            tools:text="64KM N OF" />
+
+        <TextView
+            android:id="@+id/location"
+            android:textColor="#202020"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="San Francisco, CA" />
+    </LinearLayout>
 
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
         android:gravity="right"
-        android:layout_weight="1.1"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Jun 7, 2020" />
+
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"

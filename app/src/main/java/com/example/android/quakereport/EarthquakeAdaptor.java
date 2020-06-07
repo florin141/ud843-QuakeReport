@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class EarthquakeAdaptor extends ArrayAdapter<Earthquake> {
 
@@ -34,8 +35,22 @@ public class EarthquakeAdaptor extends ArrayAdapter<Earthquake> {
         TextView magnitudeTextView = (TextView) convertView.findViewById(R.id.magnitude);
         magnitudeTextView.setText(currentEarthquake.getMagnitude());
 
+
+        String[] tokenizer = currentEarthquake.getLocation().split(Pattern.quote("of"));
+
+        String distanceFrom = "Near the";
+        String location = currentEarthquake.getLocation();
+
+        if (tokenizer.length == 2) {
+            distanceFrom = tokenizer[0] + "of";
+            location = tokenizer[1].trim();
+        }
+
+        TextView distanceTextView = (TextView) convertView.findViewById(R.id.distance);
+        distanceTextView.setText(distanceFrom);
+
         TextView locationTextView = (TextView) convertView.findViewById(R.id.location);
-        locationTextView.setText(currentEarthquake.getLocation());
+        locationTextView.setText(location);
 
         // Create a new Date object from the time in milliseconds of the earthquake
         Date dateObject = new Date(currentEarthquake.getTimeInMilliseconds());
