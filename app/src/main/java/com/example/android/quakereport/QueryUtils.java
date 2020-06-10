@@ -166,8 +166,9 @@ public class QueryUtils {
         // Perform HTTP request to the URL and receive a JSON response back
         String jsonResponse = null;
         try {
+            Thread.sleep(2000);
             jsonResponse = makeHttpRequest(url);
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
